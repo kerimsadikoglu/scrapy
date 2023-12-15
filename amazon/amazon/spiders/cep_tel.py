@@ -11,7 +11,7 @@ class CepTelSpider(scrapy.Spider):
 
     def start_requests(self):
         yield scrapy.Request(url="https://www.amazon.com.tr/s?rh=n%3A13709907031&fs=true&ref=lp_13709907031_sar",callback=self.parse,headers=
-                              {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'})
+                              {'User-Agent':'Your-user agent'})
         
 
     def parse(self, response):
@@ -42,4 +42,4 @@ class CepTelSpider(scrapy.Spider):
             if next_page_son:
                 next_page = link_bas + next_page_son.get()
                 yield scrapy.Request(url=next_page, callback=self.parse,headers=
-                              {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'})
+                              {'User-Agent':'Your-user agent'})
