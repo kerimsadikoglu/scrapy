@@ -11,7 +11,7 @@ class N11telSpider(scrapy.Spider):
         for i in range(1, 6): 
             url0 = f"{base_url}?pg={i}"
             yield scrapy.Request(url=url0, callback=self.parse, headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'})
+                'User-Agent': 'your-user-agent'})
   
 
     def parse(self, response):
